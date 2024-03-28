@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import PulseLoader from "react-spinners/PulseLoader";
+import GridLoader from "react-spinners/GridLoader";
 const loading = () => {
   return (
     <div
@@ -11,7 +11,7 @@ const loading = () => {
         alignItems: "center",
       }}
     >
-      <PulseLoader color="#00224D" />
+      <GridLoader color="#00224D" />
     </div>
   );
 };
