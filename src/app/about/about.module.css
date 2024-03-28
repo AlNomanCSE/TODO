@@ -1,0 +1,39 @@
+.main {
+  height: calc(100vh - 140.7813px);
+  color: #00224D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main div {
+  max-width: 600px;
+  text-align: justify;
+  font-size: 1.2rem;
+  font-weight: 900;
+  background-image: linear-gradient(45deg, #00224D, #51829B);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media screen and (width<768px) {
+  .main {
+    height: calc(100vh - 120.3126px);
+  }
+
+  .main div {
+    max-width: 400px;
+    font-size: 1rem;
+  }
+
+}
+
+@media screen and (width<600px) {
+
+  .main div {
+    max-width: 300px;
+    font-weight: 600;
+    margin: 0 1rem;
+  }
+
+}

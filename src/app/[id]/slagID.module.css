@@ -1,0 +1,103 @@
+.main {
+    height: calc(100vh - 140.7813px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    background-color: #337357;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 10px;
+    gap: 1rem;
+    color: #1f343f;
+}
+
+.form>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.form>div label {
+    font-weight: 600;
+}
+
+.form>div input,
+.form>div textarea {
+    width: 500px;
+    padding: 1rem 2rem;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    background-color: #ccc59d;
+    color: #1f343f;
+}
+
+.form button {
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 1rem;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    transition: all .2s ease;
+}
+
+
+.form button:hover {
+    background-color: #ccc59d;
+    color: #1f343f;
+    border: 2px solid #1f343f;
+}
+
+@media screen and (width<768px) {
+    .main {
+        height: calc(100vh - 120.3126px);
+    }
+
+    .form {
+        width: 500px;
+    }
+
+    .form h2 {
+        font-size: 1.2rem;
+    }
+
+    .form>div label {
+        font-weight: 500;
+    }
+
+    .form>div input,
+    .form>div textarea {
+        width: 300px;
+        padding: .5rem;
+    }
+
+    .form button {
+        font-size: 15px;
+        text-transform: uppercase;
+        padding: .7rem;
+        letter-spacing: 1px;
+        border-radius: 10px;
+
+    }
+}
+
+@media screen and (width<400px) {
+    .form {
+        width: 300px;
+    }
+
+    .form>div input,
+    .form>div textarea {
+        width: 270px;
+        padding: .5rem;
+    }
+
+}

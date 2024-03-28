@@ -1,0 +1,53 @@
+.card {
+    padding: 2rem;
+    background-color: #F6995C;
+    border-radius: 10px;
+    color: #2e4f5f;
+}
+
+.card>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.card>div>div {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.card>div>div>p:first-child {
+    color: #337357;
+}
+
+.card>div>div>p:last-child {
+    color: #EE4266;
+}
+
+.card>p {
+    text-align: justify;
+    color: #202c31;
+}
+
+@media screen and (width<768px) {
+    .card {
+        padding: 1rem;
+    }
+
+    .card>div {
+        font-size: 1.2rem;
+    }
+
+    .card>div>div {
+        display: flex;
+        gap: .5rem;
+    }
+
+    .card>p {
+        text-align: justify;
+        font-size: 15px;
+        line-height: 1.4;
+    }
+}
