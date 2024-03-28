@@ -1,25 +1,34 @@
+"use client";
 import React from "react";
 import { MdDelete } from "react-icons/md";
 import { IoCreate } from "react-icons/io5";
+import { useRouter } from "next/navigation";
 import styles from "./Card.module.css";
-const Card = () => {
+import Link from "next/link";
+const Card = ({ topic }) => {
+  const router = useRouter();
+  async function handleDelete() {
+    await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/topic?id=${topic._id}`, {
+      method: "DELETE",
+    });
+    router.refresh();
+  }
   return (
     <div className={styles.card}>
       <div>
-        <h4>TITLE</h4>
+        <h4>{topic.title}</h4>
         <div>
           <p>
-            <IoCreate />
+            <Link href={`${topic._id}`}>
+              <IoCreate />
+            </Link>
           </p>
           <p>
-            <MdDelete />
+            <MdDelete onClick={handleDelete} style={{ cursor: "pointer" }} />
           </p>
         </div>
       </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor et animi
-        iusto? Beatae libero iusto nesciunt quidem,
-      </p>
+      <p>{topic.description}</p>
     </div>
   );
 };

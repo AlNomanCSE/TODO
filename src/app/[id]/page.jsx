@@ -1,25 +1,17 @@
+import mongoose from "mongoose";
 import React from "react";
 import styles from "./slagID.module.css";
-export const metadata = {
-  title: "Todo | Edite",
-  description: "Create Todo for your day",
-  keywords: "todo, daily routine, routine",
-};
-const page = () => {
+import { getTopic } from "@/utils/process";
+import FormComponent from "./FormComponent";
+
+const page = async ({ params }) => {
+  const { id } = params;
+  const topicId = new mongoose.Types.ObjectId(id);
+  const topic = await getTopic(topicId);
+  console.log(topic);
   return (
     <main className={styles.main}>
-      <form className={styles.form}>
-        <h2>Edit Todo</h2>
-        <div>
-          <label htmlFor="titel">Title</label>
-          <input type="text" name="title" />
-        </div>
-        <div>
-          <label htmlFor="description">Description</label>
-          <textarea type="text" name="description" />
-        </div>
-        <button>Confirm</button>
-      </form>
+      <FormComponent topic={topic} />
     </main>
   );
 };
