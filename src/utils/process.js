@@ -1,7 +1,8 @@
-
+const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN || null;
 export const getTopics = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/topic`, {
+    if (!apiDomain) return [];
+    const res = await fetch(`${apiDomain}/topic`, {
       cache: "no-store",
     });
     if (!res.ok) throw new Error("Failed to fetch topics ...!");
@@ -12,12 +13,9 @@ export const getTopics = async () => {
 };
 export const getTopic = async (id) => {
   try {
-    const topic = await fetch(
-      `${process.env.NEXT_PUBLIC_API_DOMAIN}/topic/${id}`,
-      {
-        cache: "no-store",
-      }
-    );
+    const topic = await fetch(`${apiDomain}/topic/${id}`, {
+      cache: "no-store",
+    });
     if (!topic.ok) throw new Error("Failed to fetch topic ...!");
     return topic.json();
   } catch (error) {

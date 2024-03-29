@@ -1,18 +1,12 @@
 "use client";
 import React from "react";
 import GridLoader from "react-spinners/GridLoader";
+import styles from "./loading.module.css";
 const loading = () => {
   return (
-    <div
-      style={{
-        height: "calc(100vh - 140.7813px)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <main className={styles.main}>
       <GridLoader color="#00224D" />
-    </div>
+    </main>
   );
 };
 

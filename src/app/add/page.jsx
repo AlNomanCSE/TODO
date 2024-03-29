@@ -37,6 +37,7 @@ const page = () => {
         <div>
           <label htmlFor="titel">Title</label>
           <input
+            id="titel"
             type="text"
             name="title"
             value={title}
@@ -47,6 +48,7 @@ const page = () => {
         <div>
           <label htmlFor="description">Description</label>
           <textarea
+            id="description"
             type="text"
             name="description"
             value={description}

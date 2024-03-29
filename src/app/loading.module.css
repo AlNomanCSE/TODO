@@ -1,0 +1,12 @@
+.main {
+    height: calc(100vh - 140.7813px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+    .main {
+        min-height: calc(100vh - 120.3126px);
+    }
+}
